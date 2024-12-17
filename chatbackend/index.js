@@ -12,6 +12,7 @@
         if (message.value) {
             socket.emit('send_name', myname.value);
             socket.emit('send_message', message.value);
+            console.log("init " + message.value);
             message.value = "";
         }
     });
