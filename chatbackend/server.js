@@ -25,7 +25,7 @@ app.get("/chat/:user_id", (req,res)=>{
         console.error('Lỗi khi truy vấn:', error);
         return;
       }
-      console.log(results)
+      console.log("res day: ", results)
       res.send(results)
     }
   );

@@ -1,5 +1,5 @@
 const user = '5adf8117-b4d4-4ac2-809f-2832d24bef97'
-const user_2 = '5d15ad52-c6ba-439a-8a2e-7c0bbf683dce'
+const user_2 = 'e18990d0-8a10-42ea-8a79-3c4dd4d3cb16'
 let socket = io('http://localhost:9000'); // Kết nối tới server
 
 // Lắng nghe kênh động `send_${user}` từ server
