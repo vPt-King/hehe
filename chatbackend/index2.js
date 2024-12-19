@@ -1,5 +1,5 @@
-const user = '5adf8117-b4d4-4ac2-809f-2832d24bef97'
-const user_2 = '5d15ad52-c6ba-439a-8a2e-7c0bbf683dce'
+const user_2 = '5adf8117-b4d4-4ac2-809f-2832d24bef97'
+const user = '5d15ad52-c6ba-439a-8a2e-7c0bbf683dce'
 let socket = io('http://localhost:9000'); // Kết nối tới server
 
 // Lắng nghe kênh động `send_${user}` từ server
@@ -13,14 +13,13 @@ document.getElementById('sendMessageButton').addEventListener('click', () => {
     let message = {
         "content": text,
         "sent_at": getCurrentTime(),
-        "receiver_id": user_2,
-        "sender_id": user
+        "receiver_id": user,
+        "sender_id": user_2
     }
     let hash = maHoa(user, user_2) // Lấy nội dung tin nhắn
     socket.emit('send_mess', { hash, message});
     console.log(`Đã gửi tin nhắn: ${message}`);
 });
-
 function maHoa(id1, id2) {
     const sortedIds = [id1, id2].sort();
     const combined = sortedIds.join('-');
@@ -31,6 +30,7 @@ function maHoa(id1, id2) {
     }
     return hash;
 }
+
 
 function getCurrentTime()
 {
